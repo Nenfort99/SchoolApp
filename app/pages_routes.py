@@ -8,7 +8,7 @@ from fastapi.responses import HTMLResponse
 page_router = APIRouter()
 
 # Jinja2 templates
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="app/templates")
 
 
 @page_router.get("/", response_class=HTMLResponse, name="home")
@@ -22,7 +22,7 @@ async def about_page(request:Request):
 
 
 
-@page_router.get("/allcourse", response_class=HTMLResponse, name="all_course")
+@page_router.get("/courses", response_class=HTMLResponse, name="courses")
 async def course_page(request:Request):
     return templates.TemplateResponse(name = "course.html", request = request)
 

@@ -8,7 +8,7 @@ from fastapi.staticfiles import StaticFiles
 app = FastAPI()
 
 # Mount static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 
 # Include routers
@@ -20,7 +20,8 @@ app.include_router(course_router)
 # Register Tortoise ORM
 register_tortoise(
     app,
-    db_url="sqlite://db.sqlite3",
+    # db_url="sqlite://db.sqlite3",
+    db_url= "asyncpg://jamezslim90:zmgHh7aNwQk9@ep-cold-leaf-25567838.us-west-2.aws.neon.tech/fastapi-school-app",
     modules={"models": ["app.models"]},
     generate_schemas=True,
     add_exception_handlers=True,
