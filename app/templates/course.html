@@ -29,10 +29,11 @@
                 <div class="col-lg-9 mt-0">
 
                     <div class="row">
+                        {% for course in course_list %}
                         <div class="col-md-4 mb-4 pb-1">
                             <div class="card custom-card-courses border-radius-0 hover-effect-1">
                                 <div class="p-relative">
-                                    <a href="demo-education-courses-details.html" class="text-color-secondary" title="">
+                                    <a href="{{ url_for('course_detail', course_id=course.id) }}" class="text-color-secondary" title="">
                                         <img class="card-img-top border-radius-0" src="{{url_for('static', path='/img/demos/education/courses/course-1.jpg')}}" alt="" />
                                     </a>
                                     <div class="custom-card-courses-author">
@@ -42,8 +43,8 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p class="mb-0 text-1 p-relative top-5 text-uppercase">John Doe</p>
-                                    <h4 class="mb-3 text-color-secondary"><a href="demo-education-courses-details.html" class="text-color-secondary" title="">Course Name Example</a></h4>
+                                    <p class="mb-0 text-1 p-relative top-5 text-uppercase">{{course.author}}</p>
+                                    <h4 class="mb-3 text-color-secondary"><a href="{{ url_for('course_detail', course_id=course.id) }}" class="text-color-secondary" title="">{{course.title}}</a></h4>
 
                                     <div class="float-end">
                                         <strong class="text-primary text-5">$79</strong>
@@ -56,60 +57,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4 pb-1">
-                            <div class="card custom-card-courses border-radius-0 hover-effect-1">
-                                <div class="p-relative">
-                                    <a href="demo-education-courses-details.html" class="text-color-secondary" title="">
-                                        <img class="card-img-top border-radius-0" src="{{url_for('static', path='/img/demos/education/courses/course-2.jpg')}}" alt="" />
-                                    </a>
-                                    <div class="custom-card-courses-author">
-                                        <div class="img-thumbnail img-thumbnail-no-borders">
-                                            <img src="{{url_for('static',path='/img/avatars/avatar-2.jpg')}}" class="rounded-circle" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="mb-0 text-1 p-relative top-5 text-uppercase">John Doe</p>
-                                    <h4 class="mb-3 text-color-secondary"><a href="demo-education-courses-details.html" class="text-color-secondary" title="">Course Name Example</a></h4>
-
-                                    <div class="float-end">
-                                        <strong class="text-primary text-5">$59</strong>
-                                    </div>
-
-                                    <div class="text-2">
-                                        <span class="d-inline-block pe-2"><i class="far text-primary fa-user"></i> 123 </span>
-                                        <span class="d-inline-block pe-2"><i class="far text-primary fa-comments"></i> 123</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4 pb-1">
-                            <div class="card custom-card-courses border-radius-0 hover-effect-1">
-                                <div class="p-relative">
-                                    <a href="demo-education-courses-details.html" class="text-color-secondary" title="">
-                                        <img class="card-img-top border-radius-0" src="{{url_for('static', path='/img/demos/education/courses/course-3.jpg')}}" alt="" />
-                                    </a>
-                                    <div class="custom-card-courses-author">
-                                        <div class="img-thumbnail img-thumbnail-no-borders">
-                                            <img src="{{url_for('static', path='/img/avatars/avatar-3.jpg')}}" class="rounded-circle" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="mb-0 text-1 p-relative top-5 text-uppercase">John Doe</p>
-                                    <h4 class="mb-3 text-color-secondary"><a href="demo-education-courses-details.html" class="text-color-secondary" title="">Course Name Example</a></h4>
-
-                                    <div class="float-end">
-                                        <strong class="text-primary text-5">$29</strong>
-                                    </div>
-
-                                    <div class="text-2">
-                                        <span class="d-inline-block pe-2"><i class="far text-primary fa-user"></i> 123 </span>
-                                        <span class="d-inline-block pe-2"><i class="far text-primary fa-comments"></i> 123</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
 
                     <div class="row">

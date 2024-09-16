@@ -26,3 +26,13 @@ register_tortoise(
     generate_schemas=True,
     add_exception_handlers=True,
 )
+
+
+
+# Configure CORS
+# app.add_middleware(
+#     CORSMiddleware,
+#     # Update with specific origins in production
+#     allow_origins=["localhost"],
+#     allow_methods=["GET", "POST"],
+# )
