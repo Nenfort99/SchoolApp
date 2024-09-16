@@ -3,7 +3,7 @@
 {% block content%}
 <div role="main" class="main">
 
-    <section class="page-header page-header-modern page-header-background page-header-background-md custom-bg-color-grey-1 mb-0" style="background-image: url(img/demos/education/backgrounds/page-header.jpg); background-position: 100% 100%;">
+    <section class="page-header page-header-modern page-header-background page-header-background-md custom-bg-color-grey-1 mb-0" style="background-image: url({{url_for('static', path='/img/demos/education/backgrounds/page-header.jpg')}}); background-position: 100% 100%;">
         <div class="container">
             <div class="row mt-5">
                 <div class="col align-self-center p-static text-center">
@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="ps-3">
                                         <p class="mb-0 text-1 text-uppercase p-relative top-3">Instructor</p>
-                                        <h4 class="mb-0 text-color-secondary text-4"><a href="demo-education-courses-details.html" class="text-color-secondary" title="">John Doe</a></h4>
+                                        <h4 class="mb-0 text-color-secondary text-4"><a href="demo-education-courses-details.html" class="text-color-secondary" title="">{{course.author}}</a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                             <div class="pe-md-4 mb-3 mb-md-0 border-right">
                                 <div class="d-flex flex-row align-items-center h-100">
                                     <div class="p-0">
-                                        <strong class="text-primary text-5">$29</strong>
+                                        <strong class="text-primary text-5">$ {{course.price}}</strong>
                                     </div>
                                 </div>
                             </div>
@@ -283,7 +283,7 @@
                             <li>
                                 <div class="comment pb-4">
                                     <div class="img-thumbnail border-0 p-0 d-none d-md-block">
-                                        <img class="avatar rounded-circle" alt="" src="img/avatars/avatar-2.jpg">
+                                        <img class="avatar rounded-circle" alt="" src="{{url_for('static', path='/img/avatars/avatar-2.jpg')}}">
                                     </div>
                                     <div class="comment-block bg-transparent p-0">
                                         <span class="comment-by">
@@ -296,7 +296,7 @@
                             <li>
                                 <div class="comment pb-4">
                                     <div class="img-thumbnail border-0 p-0 d-none d-md-block">
-                                        <img class="avatar rounded-circle" alt="" src="img/avatars/avatar.jpg">
+                                        <img class="avatar rounded-circle" alt="" src="{{url_for('static', path='/img/avatars/avatar.jpg')}}">
                                     </div>
                                     <div class="comment-block bg-transparent p-0">
                                         <span class="comment-by">
@@ -315,11 +315,11 @@
                                 <div class="card custom-card-courses border-radius-0 hover-effect-1">
                                     <div class="p-relative">
                                         <a href="demo-education-courses-details.html" class="text-color-secondary" title="">
-                                            <img class="card-img-top border-radius-0" src="img/demos/education/courses/course-1.jpg" alt="" />
+                                            <img class="card-img-top border-radius-0" src="{{url_for('static', path='/img/demos/education/courses/course-1.jpg')}}" alt="" />
                                         </a>
                                         <div class="custom-card-courses-author">
                                             <div class="img-thumbnail img-thumbnail-no-borders">
-                                                <img src="img/avatars/avatar.jpg" class="rounded-circle" alt="">
+                                                <img src="{{url_for('static', path='/img/avatars/avatar.jpg')}}" class="rounded-circle" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -342,11 +342,11 @@
                                 <div class="card custom-card-courses border-radius-0 hover-effect-1">
                                     <div class="p-relative">
                                         <a href="demo-education-courses-details.html" class="text-color-secondary" title="">
-                                            <img class="card-img-top border-radius-0" src="img/demos/education/courses/course-2.jpg" alt="" />
+                                            <img class="card-img-top border-radius-0" src="{{url_for('static', path='/img/demos/education/courses/course-2.jpg')}}" alt="" />
                                         </a>
                                         <div class="custom-card-courses-author">
                                             <div class="img-thumbnail img-thumbnail-no-borders">
-                                                <img src="img/avatars/avatar-2.jpg" class="rounded-circle" alt="">
+                                                <img src="{{url_for('static', path='/img/avatars/avatar-2.jpg')}}" class="rounded-circle" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -369,11 +369,11 @@
                                 <div class="card custom-card-courses border-radius-0 hover-effect-1">
                                     <div class="p-relative">
                                         <a href="demo-education-courses-details.html" class="text-color-secondary" title="">
-                                            <img class="card-img-top border-radius-0" src="img/demos/education/courses/course-3.jpg" alt="" />
+                                            <img class="card-img-top border-radius-0" src="{{url_for('static', path='/img/demos/education/courses/course-3.jpg')}}" alt="" />
                                         </a>
                                         <div class="custom-card-courses-author">
                                             <div class="img-thumbnail img-thumbnail-no-borders">
-                                                <img src="img/avatars/avatar-3.jpg" class="rounded-circle" alt="">
+                                                <img src="{{url_for('static', path='/img/avatars/avatar-3.jpg')}}" class="rounded-circle" alt="">
                                             </div>
                                         </div>
                                     </div>

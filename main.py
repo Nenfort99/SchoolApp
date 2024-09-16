@@ -17,12 +17,13 @@ app.include_router(course_router)
 
 
 
-# Register Tortoise ORM
+
+# # Register Tortoise ORM
 register_tortoise(
     app,
     # db_url="sqlite://db.sqlite3",
-    db_url= "asyncpg://jamezslim90:zmgHh7aNwQk9@ep-cold-leaf-25567838.us-west-2.aws.neon.tech/fastapi-school-app",
-    modules={"models": ["app.models"]},
+    db_url= "asyncpg://jamezslim90:zmgHh7aNwQk9@ep-cold-leaf-25567838.us-west-2.aws.neon.tech/fast-schoolapp",
+    modules={"models": ["app.models", "aerich.models"]},
     generate_schemas=True,
     add_exception_handlers=True,
 )
