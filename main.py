@@ -4,6 +4,7 @@ from app.pages_routes import  page_router
 from app.course_routes import course_router
 from fastapi.staticfiles import StaticFiles
 
+
 # Initialise our fastapi app
 app = FastAPI()
 
