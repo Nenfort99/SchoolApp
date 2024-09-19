@@ -1,6 +1,6 @@
 from tortoise import fields
 from tortoise.models import Model
-from tortoise.contrib.pydantic import pydantic_model_creator, pydantic_queryset_creator
+from tortoise.contrib.pydantic import pydantic_model_creator, pydantic_queryset_creator import pydantic_requirements_creator, pydantic_queryset_creator
 from datetime import datetime
 
 class Course(Model):
@@ -12,7 +12,6 @@ class Course(Model):
     created_at = fields.DatetimeField(auto_now_add=True)  # Automatically set to current time on creation
     updated_at = fields.DatetimeField(auto_now=True)  # Automatically updates when the record is modified
     is_published = fields.BooleanField(default=True)  # Optional field to mark post as published or not
-
 
 
     def __str__(self):
