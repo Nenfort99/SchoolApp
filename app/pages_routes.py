@@ -18,7 +18,7 @@ async def home_page(request:Request):
     course_list = await Course_Pydantic.from_queryset(Course.all())
     blog_list = await Blog_Pydantic.from_queryset(Blogpost.all())
 
-    return templates.TemplateResponse(name ="home.html", request = request, context={"course_list": course_list, "blog_list":blog_list})
+    return templates.TemplateResponse(name ="home.html", request = request, context={"course_list": course_list, "blog_list":blog_list, "items_list":items_list})
 
 
 @page_router.get("/about", response_class=HTMLResponse, name="about")
