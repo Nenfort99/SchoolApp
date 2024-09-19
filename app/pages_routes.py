@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import List
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
-from app.models import Course, Course_Pydantic, Blogpost, Blog_Pydantic
+from app.models import Course, Course_Pydantic, Blogpost, Blog_Pydantic, Items, Items_Pydantic
 
 
 
