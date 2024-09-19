@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from tortoise.contrib.fastapi import register_tortoise
 from app.pages_routes import  page_router
 from app.course_routes import course_router
+from app.blog_routes import blog_router
+
 from fastapi.staticfiles import StaticFiles
 
 
@@ -15,6 +17,9 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 # Include routers
 app.include_router(page_router)
 app.include_router(course_router)
+app.include_router(blog_router)
+
+
 
 
 

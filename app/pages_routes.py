@@ -3,7 +3,8 @@ from pydantic import BaseModel
 from typing import List
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
-from app.models import Course, Course_Pydantic
+from app.models import Course, Course_Pydantic, Blogpost, Blog_Pydantic
+
 
 
 page_router = APIRouter()
@@ -15,8 +16,9 @@ templates = Jinja2Templates(directory="app/templates")
 @page_router.get("/", response_class=HTMLResponse, name="home")
 async def home_page(request:Request):
     course_list = await Course_Pydantic.from_queryset(Course.all())
+    blog_list = await Blog_Pydantic.from_queryset(Blogpost.all())
 
-    return templates.TemplateResponse(name ="home.html", request = request, context={"course_list": course_list})
+    return templates.TemplateResponse(name ="home.html", request = request, context={"course_list": course_list, "blog_list":blog_list})
 
 
 @page_router.get("/about", response_class=HTMLResponse, name="about")
